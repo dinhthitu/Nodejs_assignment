@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/views/style.css">
+</head>
+<body>
+    <h2>Create new account </h2>
+    <form action="/signup" method="POST">
+        <!-- full name -->
+        <label for="fullName">Full Name</label>
+        <input type="text" name="fullName" >
+        <% if (errorMessage && errorMessage.fullName) { %>
+            <span class="error-message"><%= errorMessage.fullName %></span>
+        <% } %>
+        
+        <!-- email address -->
+        <label for="email">Email Address</label>
+        <input type="email" name="email" >
+        <% if (errorMessage && errorMessage.email) { %>
+            <span class="error-message"><%= errorMessage.email %></span>
+        <% } %>
+    
+        <!-- password -->
+        <label for="password">Create Password</label>
+        <input type="password" name="password" >
+        <% if (errorMessage && errorMessage.password) { %>
+            <span class="error-message"><%= errorMessage.password %></span>
+        <% } %>
+    
+        <!-- re-password -->
+        <label for="confirmPassword">Re-enter Password</label>
+        <input type="password" name="confirmPassword" >
+        <% if (errorMessage && errorMessage.confirmPassword) { %>
+            <span class="error-message"><%= errorMessage.confirmPassword %></span>
+        <% } %>
+        
+        <!-- submit button -->
+        <!-- <button type="submit">Sign Up</button> -->
+        <p><a href="/views/signin.ejs">Sign in</a></p>
+    </form>
+    <% if(successMessage) {
+        %> 
+        <h2 style="color: green"><%= successMessage %></h2>
+      
+    <%} %>
+  
+  
+</body>
+</html>

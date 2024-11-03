@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="/views/style.css">
+</head>
+<body>
+    
+        <h1> Sign In If You Have An Account </h1>
+    
+    
+        <form action="/signin" method="POST">
+    
+            <!--   -->
+            <label> Enter username</label>
+            <input type="email" name="email" >
+            <% if (errorMessage && errorMessage.email) { %>
+                <span class="error-message"><%= errorMessage.email %></span>
+            <% } %>
+    
+            <!--  -->
+            <label> Enter Password</label>
+            <input type="password" name="password" >
+            <% if (errorMessage && errorMessage.password) { %>
+                <span class="error-message"><%= errorMessage.password %></span>
+            <% } %>
+            <!-- <button type="submit">Sign in</button> -->
+        </form>
+        <p>Sign up if you don't have account <a href="/signup">Sign up</a></p>
+    
+        <% if (successMessage) {
+            %>
+    <script>
+            alert(" <%= successMessage %>");
+    </script>
+    <% } %>
+</body>
+</html>

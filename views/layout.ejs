@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Control</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome <%= user.fullName %></h1>
+        <a href="/signout">Sign out</a>
+    </header>
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="/compose">Compose</a></li>
+                <li><a href="/inbox">Inbox</a></li>
+                <li><a href="/outbox">Outbox</a></li>
+            </ul>
+        </nav>
+        <main>
+            <%- body %>
+        </main>
+    </div>
+</body>
+</html>

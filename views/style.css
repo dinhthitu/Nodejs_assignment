@@ -1,0 +1,90 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: hsl(0, 26%, 78%);
+    min-height: 100vh;
+    margin-top: 30px;
+    box-sizing: border-box;
+}   
+
+/* Main form container */
+form {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 50px 0 0 35%;
+}
+
+/* Center the heading */
+h1 {
+    font-size: 2rem;
+    color: #333333;
+    text-align: center;
+    
+    order: -1; /* top */
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333333;
+    text-align: center;
+    margin: 0;
+}
+
+/* Label styling */
+label {
+    font-weight: bold;
+    color: #333333;
+}
+
+/* Input field styling */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Button styling */
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Link styling in paragraph */
+p {
+    font-size: 14px;
+    color: #555555;
+    text-align: center;
+    
+}
+
+p a {
+    color: #007bff;
+    padding: 5px;
+}
+.error-message{
+    color: red;
+}

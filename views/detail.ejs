@@ -1,0 +1,18 @@
+<%- include('layout') %>
+<h2>Email Detail</h2>
+<div>
+    <h3>Subject: <%= email.subject || '(no subject)' %></h3>
+    <p><strong>From:</strong> <%= email.senderName %></p>
+    <p><strong>To:</strong> <%= email.recipientName %></p>
+    <p><strong>Received:</strong> <%= email.timeReceived %></p>
+    <div>
+        <strong>Body:</strong>
+        <p><%= email.body %></p>
+    </div>
+    <% if (email.attachment) { %>
+        <div>
+            <a href="/download/<%= email.attachment %>">Download Attachment</a>
+        </div>
+    <% } %>
+</div>
+<a href="/inbox">Back to Inbox</a>

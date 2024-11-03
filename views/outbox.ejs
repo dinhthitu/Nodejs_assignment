@@ -1,0 +1,30 @@
+<%- include('layout') %>
+<h2>Outbox</h2>
+<form id="deleteForm">
+    <table>
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Recipient</th>
+                <th>Subject</th>
+                <th>Time Sent</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% emails.forEach(email => { %>
+                <tr>
+                    <td><input type="checkbox" name="emailIds" value="<%= email.id %>"></td>
+                    <td><%= email.recipientName %></td>
+                    <td><a href="/email/<%= email.id %>"><%= email.subject || '(no subject)' %></a></td>
+                    <td><%= email.timeSent %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <button type="button" id="deleteButton">Delete</button>
+</form>
+<div class="pagination">
+    <% for (let i = 1; i <= totalPages; i++) { %>
+        <a href="/outbox?page=<%= i %>"><%= i %></a>
+    <% } %>
+</div>
